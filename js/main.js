@@ -110,6 +110,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
         for(let elemento of botonesPut){
             elemento.addEventListener("click", function(){
+                let seccion=document.querySelector(".seccionPut");
+                if(seccion.classList.contains("oculto")){
+                    seccion.classList.toggle("oculto");
+                }
 
                 Put(elemento.id)
             }
@@ -117,8 +121,53 @@ document.addEventListener("DOMContentLoaded", function(){
             
         }
     }
-    async function Put(id){
-        
+    function Put(id){
+       let pedido= elementos.find(elemento=>elemento._id==id);
+
+       
+
+       document.querySelector("#nombreM").value=pedido.thing[0].nombre;
+       document.querySelector("#promoM").value=pedido.thing[0].promo;
+       document.querySelector("#direcM").value=pedido.thing[0].direccion;
+
+       let guardar=document.querySelector(".guardar");
+       guardar.id=pedido._id;
+       guardar.addEventListener("click", async function(){
+
+        let seccion=document.querySelector(".seccionPut");
+        let datos={
+            "thing":[{
+                "nombre":document.querySelector("#nombreM").value,
+                "promo":document.querySelector("#promoM").value,
+                "direccion":document.querySelector("#direcM").value,
+            }]
+        }
+        let tbody=document.querySelector(".tbody");
+        tbody.innerHTML="<h1>Modificando...</h1>";
+
+        try{
+            let request= fetch(URL+"/"+guardar.id,{
+                "method":"PUT",
+                "headers":{"Content-Type":"application/json"},
+                "body":JSON.stringify(datos)
+            });
+            let response= await request;
+            if(response.ok){
+                let json= await response.json();
+                if(!seccion.classList.contains("oculto")){
+                    seccion.classList.toggle("oculto");
+                }
+
+                mostrar();
+            }
+            else{
+                tbody.innerHTML="<h1>Falla de URL</h1>";
+            }
+        }
+        catch(exc){
+            tbody.innerHTML="<h1>Falla de conexión</h1>";
+        }
+       })
     }
     
 
