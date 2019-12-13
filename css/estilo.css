@@ -80,6 +80,26 @@ article{
     width: 100%;
     height: 100%;
 }
-.ingrediente{
+.nuevoEstilo{
+    background-color: yellow;
+}
+.oculto{
+    display: none;
+}
+.pedido{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+.seccionPedidos{
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 0 0 5% 0;
+}
 
+.recomendarPizza{
+    float: left;
+    width: 30%;
+    height: 100%;
 }

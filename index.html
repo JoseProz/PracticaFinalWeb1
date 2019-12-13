@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-     <div class="container-fluid">
+     <header class="container-fluid">
        <div class="row">
          <div class="col-10 imagen"><img src="css/img/logo.png" alt=""></div>
          <div class="col-1"><a class="redSocial" href="www.facebook.com">face</a></div>
          <div class="col-1"><a class="redSocial" href="www.facebook.com">twitter</a></div>
        </div>
-     </div> 
+      </header> 
+      <nav>
      <ul class="nav justify-content-center navegador">
         <li class="nav-item">
           <a class="nav-link menu" href="#">Inicio</a>
@@ -36,12 +37,13 @@
                 <a class="nav-link menu" href="#">Seccion Repartos</a>
               </li>
       </ul>
-    <div class="contenedorPromo">
+    </nav>
+    <section class="contenedorPromo">
       <div class="row">
-          <div class="col-6"><h3 class="peperoni">Promo 1</h3>
+          <div class="col-6"><h3 class="peperoni cambiar">Promo 1</h3>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam necessitatibus corrupti totam, ducimus libero dolores eaque dolorem asperiores consectetur, est eius magnam culpa exercitationem adipisci fugiat accusantium voluptates voluptatem minus?</p>
           </div>
-          <div class="col-6"><h3 class="napolitana">Promo 2</h3>
+          <div class="col-6"><h3 class="napolitana cambiar">Promo 2</h3>
             <table>
               <thead>
                 <th>      </th>
@@ -66,27 +68,27 @@
           
         </div>
         <div class="row">
-            <div class="col-6"><h3 class="rucula">Promo 3</h3>
+            <div class="col-6"><h3 class="rucula cambiar">Promo 3</h3>
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam necessitatibus corrupti totam, ducimus libero dolores eaque dolorem asperiores consectetur, est eius magnam culpa exercitationem adipisci fugiat accusantium voluptates voluptatem minus?</p>
             </div>
-            <div class="col-6"><h3 class="cuatroquesos">Promo 4</h3>
+            <div class="col-6"><h3 class="cuatroquesos cambiar">Promo 4</h3>
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus odit molestias maxime asperiores voluptatibus ea. Dicta eligendi officia hic quaerat quidem est ab omnis veritatis, molestias vitae explicabo voluptatem numquam?</p>
             </div>
             
           </div>
           <div class="row">
-              <div class="col-6"><h3 class="muzzan">Promo 5</h3>
+              <div class="col-6"><h3 class="muzzan cambiar">Promo 5</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam necessitatibus corrupti totam, ducimus libero dolores eaque dolorem asperiores consectetur, est eius magnam culpa exercitationem adipisci fugiat accusantium voluptates voluptatem minus?</p>
               </div>
-              <div class="col-6"><h3 class="pollo">Promo 6</h3>
+              <div class="col-6"><h3 class="pollo cambiar">Promo 6</h3>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus odit molestias maxime asperiores voluptatibus ea. Dicta eligendi officia hic quaerat quidem est ab omnis veritatis, molestias vitae explicabo voluptatem numquam?</p>
               </div>
               
             </div>
         
-      </div>
-      <div class="contenedorReparto">
-      <div class="col-12"><h3 class="reparto">Repartos</h3>
+          </section>
+      <section class="contenedorReparto">
+      <div class="col-12"><h3 class="reparto cambiar">Repartos</h3>
         <ul class="zona">
           <li><h4 class="zona">Zona 1</h4></li>
           <p>Barrio Terminal</p>
@@ -94,28 +96,73 @@
           <p>Barrio Centro</p>
           <li><h4 class="zona">Zona 3</h4></li>
           <p>Barrio Falucho</p>
+        <button class="btnMas">Ver Más</button>
+          <section class="oculto">
+          <li><h4 class="zona">Zona 1</h4></li>
+          <p>Barrio Terminal</p>
+          <li><h4 class="zona">Zona 2</h4></li>
+          <p>Barrio Centro</p>
+          <li><h4 class="zona">Zona 3</h4></li>
+          <p>Barrio Falucho</p>
+          <li><h4 class="zona">Zona 1</h4></li>
+          <p>Barrio Terminal</p>
+          <li><h4 class="zona">Zona 2</h4></li>
+          <p>Barrio Centro</p>
+          <li><h4 class="zona">Zona 3</h4></li>
+          <p>Barrio Falucho</p>
+        </section>
+        <button class="oculto btnMenos">Ver Menos</button>
+       
         </ul>
       </div>
+      <div>
+        <button type=submit class="btncambiar">Cambiar Estilo</button>
       </div>
+    </section>
+    <article class="recomendarPizza">
+      <button id="recomendar" type="submit">Recomendar</button>
+      <table>
+        <tbody id="Pizza">
+        </tbody>
+      </table>
+      <table>
+        <tbody id="Ingrediente">
+        </tbody>
+      </table>
 
-      <article>
-        <button id="recomendar" type="submit">Recomendar</button>
-        <table>
-          <tbody id="Pizza">
-
+    </article>
+    <section class="pedido">
+      <h4>Haga su Pedido!!</h4>
+      <p>Ingrese su nombre</p><input type="text" id="nombre">
+      <p>Ingrese Numero de Promo</p><input type="number" id="promo">
+      <p>Ingrese Direccion</p><input type="text" id="direc">
+      <button type="submit" class="enviar">Enviar</button>
+      <section id="bodyPedido">
+      </section>
+    </section>
+    <section class="seccionPedidos">
+      <h4>Pedidos del día</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>nombre</th>
+            <th>N° de Promo</th>
+            <th>Dirección</th>
+            <th>Borrar</th>
+          </tr>
+          <tbody class="tbody">
           </tbody>
-        </table>
-        <table>
-          <tbody id="Ingrediente">
+        </thead>
 
-          </tbody>
-        </table>
+      </table>
 
-      </article>
+    </section>
+
+    
 
 
   <footer class="pie">
-    <p class="">Copyright2017-Muzzán Co.</p>
+    <p>Copyright2017-Muzzán Co.</p>
   </footer>
 
 
